@@ -18,7 +18,7 @@
  */
 p.lead {
 	position:relative;
-	top:3px;
+	top:16px;
 }
 #wins, #losses {
 	margin:0 5px;
@@ -26,6 +26,15 @@ p.lead {
 
 .bg-loss {
 	background-color:black;
+}
+
+.bg-help {
+	background-color:orange;
+}
+
+span.glyphicon {
+	float:right;
+	cursor: pointer;
 }
 
 /*

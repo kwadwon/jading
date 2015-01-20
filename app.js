@@ -6,7 +6,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 var genuuid = require('node-uuid');
+
+/*mongodb connection string*/
+var connectionString = 'mongodb://localhost/kwadwo_shoobx_game';
 
 var app = express();
 app.set('port', process.env.PORT||3000);
@@ -20,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
+	store: new MongoStore({url:connectionString}),
 	genid: function(req) {
 		return genuuid.v1();
 	},

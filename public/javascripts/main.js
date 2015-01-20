@@ -233,4 +233,11 @@ var currentWordLength;
 			$("p.bg-loss").toggleClass('invisible');
 		}
 	}
+/*
+ * Toggle info text
+ */
+	$($("span.glyphicon")[0]).click(function() {
+		$("p.bg-help").toggleClass('invisible');
+	});
+
 });

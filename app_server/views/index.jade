@@ -14,14 +14,16 @@ block content
 						| Wins : 
 						span(id='wins') #{wins}  
 						| | 
-						Span(style="margin-left:5px")
+						span(style="margin-left:5px")
 							| Losses : 
 						span(id='losses') #{losses} 
+						span(class="glyphicon glyphicon-info-sign")
 					p.bg-primary.invisible
 						|	Congrats on your win!
 					p.bg-loss.invisible
 						| Sorry buddy, try again.
-					br
+					p.bg-help.invisible
+						| Guess a letter by clicking or using your keyboard. Each round ends after 10 incorrect guesses or when you fill in all blanks.
 					canvas(id="canvas" style="border:1px solid white" width="400" height="350")
 					hr
 					div#letters
