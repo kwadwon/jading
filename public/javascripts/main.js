@@ -1,6 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-var currentWordLength;
+	var currentWordLength;
 
 /*
  * When the page is loaded, start game by resetting.
@@ -87,7 +87,7 @@ var currentWordLength;
 
 	// components of gallow and man
 	var components = [drawBase, drawLeft, drawTop, drawRight, drawHead,
-    drawBody, drawLeftArm, drawRightArm, drawLeftLeg, drawRightLeg];
+			drawBody, drawLeftArm, drawRightArm, drawLeftLeg, drawRightLeg];
  
 	// draw differnet component of gallow and man
 	function drawComponent(number) {
@@ -117,7 +117,7 @@ var currentWordLength;
 	$(document).keydown(function(e) {
 		if (e.keyCode >= 65 && e.keyCode <=90) {
 			var letter = $("#letters button")[e.keyCode - 65];
-			if (!$(letter).prop('disabled')){
+			if (!$(letter).prop('disabled')) {
 				$(letter).click();	
 			}
 		} 
@@ -147,7 +147,7 @@ var currentWordLength;
 /*
  * Disable or enable letters
  */
- function toggleLetterClicks(isOff) {
+	function toggleLetterClicks(isOff) {
 		$("#letters button").each(function() {
 			$(this).prop('disabled',isOff);
 			isOff ? $(this).addClass('clicked') : $(this).removeClass('clicked');

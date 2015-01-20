@@ -5,7 +5,7 @@ var dict = new dt.dictionary();
 dict = Object.freeze(dict);
 
 /* GET home page */
-module.exports.index = function(req, res){
+module.exports.index = function(req, res) {
 	var sess = req.session;
 	if (!sess.losses)
 		sess.losses = 0;
@@ -17,7 +17,7 @@ module.exports.index = function(req, res){
 };
 
 /* Get new word */
-module.exports.getNewWord = function(req, res){
+module.exports.getNewWord = function(req, res) {
 	var newWordInfo = dict.getNewWord(); //0 is word, 1 is index 
 	var sess = req.session;
 	sess.word = newWordInfo[0];
@@ -67,4 +67,4 @@ function getPositions(letter, wordIndex) {
 function sendJsonResponse(res, status, content) {
 	res.status(200);
 	res.json(content);
-};
+}
