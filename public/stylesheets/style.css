@@ -1,0 +1,43 @@
+/*
+ * Letter styling 
+ */
+#letters button {
+	color:white;
+}
+
+#letters button.clicked {
+	color:black;
+}
+
+#guesses li {
+	width:33px;
+}
+
+/*
+ * Win and Loss styling
+ */
+p.lead {
+	position:relative;
+	top:3px;
+}
+#wins, #losses {
+	margin:0 5px;
+}
+
+.bg-loss {
+	background-color:black;
+}
+
+/*
+ * Game over highlight
+ */
+.game-over {
+	background-color:black;
+}
+
+/*
+ *End game messags
+ */
+.invisible {
+	visibility:hidden !important;
+}

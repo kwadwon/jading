@@ -5,21 +5,29 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var genuuid = require('node-uuid');
 
 var app = express();
-
 app.set('port', process.env.PORT||3000);
 
 // view engine setup
 app.set('views', path.join(__dirname, '/app_server/views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+	genid: function(req) {
+		return genuuid.v1();
+	},
+	secret: 'kwadwo_shoobx_game',
+	resave: false,
+	saveUninitialized: true
+}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routes')(app);
